@@ -9,11 +9,12 @@ install:
   - "pip3 install mongo-orchestration"
 services:
   - mongodb
+  - elasticsearch
 env:
   - PYTHONPATH=.
 before_script:
+  - curl -sSL https://raw.githubusercontent.com/moliware/travis-solr/master/travis-solr.sh | SOLR_VERSION=3.6.1 bash
   - mongo-orchestration start
-  - mongo test --eval 'rs.initiate();'
   - sleep 15
 # command to run tests
-script: python3 -m unittest discover
+script: python3 setup.py test
