@@ -10,8 +10,7 @@ install:
 services:
   - mongodb
   - elasticsearch
-env:
-  - PYTHONPATH=.
+
 before_script:
   - curl -sSL https://raw.githubusercontent.com/moliware/travis-solr/master/travis-solr.sh | SOLR_VERSION=3.6.1 bash
   - mongo-orchestration start
