@@ -5,8 +5,9 @@ python:
   - "3.3"
   - "3.4"
 install:
-  - "pip3 install mongo-orchestration"
+  - "pip3 install --upgrade bson"
   - "pip3 install --upgrade pymongo"
+  - "pip3 install mongo-orchestration"
 services:
   - elasticsearch
 
