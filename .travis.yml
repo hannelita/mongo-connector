@@ -13,6 +13,5 @@ before_script:
   - mongo-orchestration stop
   - python setup.py install
   - curl -sSL https://raw.githubusercontent.com/moliware/travis-solr/master/travis-solr.sh | SOLR_VERSION=3.6.1 bash
-  - mongo-orchestration start
 # command to run tests
 script: python setup.py test
