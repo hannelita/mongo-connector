@@ -5,7 +5,6 @@ python:
   - "3.3"
   - "3.4"
 install:
-  - "pip3 install mongo-connector"
   - "pip3 install mongo-orchestration"
 services:
   - mongodb
@@ -13,6 +12,8 @@ services:
 
 before_script:
   - curl -sSL https://raw.githubusercontent.com/moliware/travis-solr/master/travis-solr.sh | SOLR_VERSION=3.6.1 bash
+  - cd mongo-connector
+  - python setup.py install
   - mongo-orchestration start
   - sleep 15
 # command to run tests
