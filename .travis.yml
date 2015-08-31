@@ -10,9 +10,9 @@ services:
   - elasticsearch
 
 before_script:
+  - python setup.py install
   - curl -sSL https://raw.githubusercontent.com/moliware/travis-solr/master/travis-solr.sh | SOLR_VERSION=3.6.1 bash
   - mongo-orchestration stop
   - mongo-orchestration start
-  - python setup.py install
 # command to run tests
 script: python setup.py test
